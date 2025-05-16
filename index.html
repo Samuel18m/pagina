@@ -1,54 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Carta</title>
+  <meta charset="UTF-8" />
+  <title>Carta para ti</title>
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-color: #fefcf9;
+      background-color: #ffeef2; /* Rosa pálido */
       padding: 50px;
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
       border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      line-height: 1.7;
+      color: #b30000; /* Rojo oscuro */
     }
+
     .fecha {
       text-align: right;
       margin-bottom: 30px;
     }
+
     .saludo {
       margin-bottom: 20px;
     }
-    .cuerpo {
-      text-align: justify;
-      margin-bottom: 30px;
-    }
-    .despedida {
-      margin-bottom: 60px;
-    }
+
     .firma {
-      text-align: left;
+      margin-top: 50px;
+    }
+
+    #popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 235, 240, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      color: #b30000;
+      padding: 20px;
+    }
+
+    #popup-box {
+      background: #fff0f5;
+      border: 1px solid #b30000;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #b30000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #popup button:hover {
+      background: #990000;
+    }
+
+    #carta {
+      display: none; /* Oculta el contenido hasta aceptar */
     }
   </style>
 </head>
 <body>
 
-  <div class="fecha">Bogotá, 16 de mayo de 2025</div>
-
-  <div class="saludo">Querido/a [Nombre]:</div>
-
-  <div class="cuerpo">
-    Espero que esta carta te encuentre bien. Te escribo para contarte que estoy aprendiendo a hacer páginas web, y pensé en comenzar con algo bonito y sencillo como esta carta.
-    <br><br>
-    Aquí puedes escribir cualquier mensaje que quieras compartir, como si fuera una carta escrita a mano pero en digital.
+<div id="popup">
+  <div id="popup-box">
+    <p>Es un texto muy largo, lo siento 💌</p>
+    <button onclick="mostrarCarta()">Aceptar</button>
   </div>
+</div>
 
-  <div class="despedida">
-    Con cariño,<br>
+<div id="carta">
+  <div class="fecha">16 de mayo de 2025</div>
+
+  <div class="saludo">Hola,</div>
+
+  <p>
+    Te preguntarás por qué hice una página como una carta, pudiendo haber escrito una carta normal en papel o un PDF como ya lo hice una vez.  
+    Lo que pasa es que me da pena entregarte una carta en persona, especialmente porque creo que esta vez me va a quedar bastante larga, y no quiero que tengas que leerla frente a mí, con el estrés del colegio. También pensé en evitar que todos tus amigos quieran verla... Y además, tú sabes que tengo muy mala letra.
+  </p>
+
+  <p>
+    Tampoco te mando un PDF porque Instagram no lo permite. Y bueno, al parecer me bloqueaste de WhatsApp —no creo que te hayas cambiado la foto de perfil, ¿o sí?
+  </p>
+
+  <p>
+    En fin, ya me excusé bastante. Al menos sé que te gusta leer, y eso me da algo de esperanza.
+  </p>
+
+  <p>
+    Lo primero, creo yo, es pedirte perdón. Perdón por todos los problemas que te he causado, aunque tú digas que no tuve nada que ver. Sé que probablemente ni siquiera deberías estar leyendo esto, porque prometí dejarte en paz. A este punto no sé por qué estoy escribiendo esta carta, aparte de para disculparme. Sé que tal vez no sirva de nada, y menos al hacerlo en una página web, jaja.
+  </p>
+
+  <p>
+    Lamento que todo se haya puesto así de un momento a otro, y también lamento no haber enfrentado bien la situación. No sé cómo mi mamá se enteró de que quería volver contigo. Después de que me dijo tantas cosas, lo único que hice fue escribirte y luego me fui a la casa de Luna. Me quedé allí un buen rato porque estaba tan mal que solo podía llorar, pensando en el daño que te hice o que te pude haber hecho.
+  </p>
+
+  <p>
+    Cuando me escribiste, se me hizo muy raro que mencionaras eso de mi mamá. Y te lo juro, no sé cómo consiguió el número de la tuya. Según lo que me dijo mi hermana, es que se hablaban desde hace rato. La verdad no tengo ni idea, solo me lo dijeron.
+  </p>
+
+  <p>
+    Lo importante es que nos vamos a reunir y que supuestamente vamos a arreglar esto. Aunque pensaron más bien que todo lo que mi mamá pensó de ti fueron solo chismes... Y si te soy sincero, le vi la cara de arrepentimiento. Sé que eso no importa mucho y está bien si te cae mal mi mamá. La verdad no me importa, porque lo que hizo no está bien.
+  </p>
+
+  <p>
+    A lo que quiero llegar es a esto: lo que me dijeron fue que, si yo quiero estar contigo, me lo van a permitir. Van a darte una oportunidad de conocerte. Y por si te lo preguntas, mi hermana no tiene problema con eso, y mi papá es feliz con que no me gusten los hombres. Mi mamá es la que se ve confundida, tal vez arrepentida. No sé. En fin, no importa. Ahora sé que nuestra relación depende en parte de nuestros padres.
+  </p>
+
+  <p>
+    La verdad no sé si de tu parte quieras seguir con lo nuestro. Pero si de verdad tú quieres, yo haré todo lo posible para estar contigo. Obvio, con el permiso de tu mamá, si ella lo permite. Sé que estamos a la espera de esa reunión, pero como son los adultos… quién sabe cuándo será.
+  </p>
+
+  <p>
+    Me estoy extendiendo mucho, y tal vez no estoy llegando a ningún punto claro. Solo sé que te amo. Y si todavía tengo alguna posibilidad de estar contigo, la voy a tomar, y voy a intentar que lo nuestro funcione.
+  </p>
+
+  <p>
+    Decidí no escribirte más desde nuestro último mensaje porque sabía que de pronto te podía poner peor. Y la verdad no sabía qué decir. Tal vez fue inmaduro de mi parte dejar las cosas así. Solo que tú estabas muy enojada, y yo… yo estaba horriblemente triste.
+  </p>
+
+  <p>
+    Sé que todo está muy complicado y que, de una forma u otra, tengo la culpa. Pero mi amor por ti no lo voy a dejar morir tan fácil.
+  </p>
+
+  <p>
+    No sé exactamente qué quiero lograr con esta carta, aparte de pedirte disculpas. Dicen que no debo hablarte porque podría hacerte sentir mal, y lo entiendo. De verdad, perdóname por todo lo que pasó con tu mamá. Es completamente entendible si no quieres saber de mí.
+  </p>
+
+  <p>
+    Solo… nuevamente, perdón.
+  </p>
+
+  <p>
+    No me respondas esta carta si no quieres. Solo quería que supieras, más que todo, que yo estoy dispuesto para ti. Cuando tú lo desees, y cuando tu mamá lo permita.
+  </p>
+
+  <p>
+    A este punto no sé si expresé todo lo que quería decir. Sé que puede ser una molestia recibir esto y tener que leerlo. Pero de verdad no tengo otra forma de expresarme.
+  </p>
+
+  <p>
+    Te amo.  
+    Y solo quería que lo supieras.
+  </p>
+
+  <p>
+    Disculpa por la carta tan larga. No es necesario que la contestes. Solo espero no haberte molestado.
+  </p>
+
+  <p>
+    Ten un buen día.  
+    Relájate, no te preocupes por nada más.  
+    Agradezco tu atención y tu tiempo.
+  </p>
+
+  <div class="firma">
+    Con cariño,<br />
+    [Moon]
   </div>
+</div>
 
-  <div class="firma">[Tu Nombre]</div>
+<script>
+  function mostrarCarta() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("carta").style.display = "block";
+  }
+</script>
 
 </body>
 </html>
+
